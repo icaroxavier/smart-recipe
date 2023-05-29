@@ -89,8 +89,9 @@ export default function Home() {
             </label>
             <textarea
               id="recipeDescription"
-              className="rounded border border-gray-400 p-1 text-sm placeholder:text-gray-400"
-              placeholder="Ex: alguma receita do nordeste, com carne de sol, queijo coalho, macaxeira, manteiga de garrafa, etc. ou  alguma receita com frango, queijo, tomate, etc."
+              className="rounded border border-gray-400 px-2 py-1 text-sm placeholder:text-gray-400"
+              placeholder="Ex: Alguma receita com frango, queijo e tomate. Ou você também pode ser mais específico 
+              e dizer que quer uma receita de lasanha ou alguma receita do italiana."
               {...register('recipeDescription')}
               required
               rows={4}
@@ -103,7 +104,7 @@ export default function Home() {
             <input
               id="time"
               type="text"
-              className="rounded border border-gray-400 p-1 text-sm placeholder:text-gray-400"
+              className="rounded border border-gray-400 px-2 py-1 text-sm placeholder:text-gray-400"
               placeholder="Ex: 30 minutos, 1 hora"
               {...register('time')}
             />
@@ -115,7 +116,7 @@ export default function Home() {
             <input
               id="tools"
               type="text"
-              className="rounded border border-gray-400 p-1 text-sm placeholder:text-gray-400"
+              className="rounded border border-gray-400 px-2 py-1 text-sm placeholder:text-gray-400"
               placeholder="Ex: fogão, forno, air fryer..."
               {...register('tools')}
             />
@@ -130,7 +131,7 @@ export default function Home() {
             <input
               id="alimentaryRestrictions"
               type="text"
-              className="rounded border border-gray-400 p-1 text-sm placeholder:text-gray-400"
+              className="rounded border border-gray-400 px-2 py-1 text-sm placeholder:text-gray-400"
               placeholder="Ex: vegano, intorelância a lactose..."
               {...register('alimentaryRestrictions')}
             />

@@ -39,12 +39,12 @@ export function Recipe({ recipe }: RecipeProps) {
       <h4 className="mb-1 mt-4 text-gray-600">Passo a Passo: </h4>
       <div className="flex flex-col gap-2 text-sm">
         {recipe.steps.map((step) => (
-          <div key={step} className="flex items-center gap-2 text-gray-500">
-            <input
-              type="checkbox"
-              className="max-w-5 h-5 max-h-5 w-5 focus:shadow-none"
-            />
-            <span>{step}</span>
+          <div
+            key={step}
+            className="flex w-full items-center gap-2 text-gray-500"
+          >
+            <input type="checkbox" className="h-5 w-5 focus:shadow-none" />
+            <div className="flex-1">{step}</div>
           </div>
         ))}
       </div>

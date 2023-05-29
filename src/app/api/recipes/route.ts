@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { RecipesParams } from '@/@types/recipes'
-import axios, { AxiosError } from 'axios'
+import axios from 'axios'
 
 export async function POST(request: Request) {
   const req = await request.json()
@@ -39,23 +39,15 @@ export async function POST(request: Request) {
     'Content-Type': 'application/json',
   }
 
-  try {
-    console.time('Request duration')
-    const response = await axios.post(
-      'https://api.openai.com/v1/completions',
-      payload,
-      { headers },
-    )
-    console.log(response.data)
-    console.timeEnd('Request duration')
-    const responseText = response.data.choices[0].text.trim()
-    const data = JSON.parse(responseText)
-    return NextResponse.json(data)
-  } catch (error) {
-    if (error instanceof AxiosError) {
-      console.log(error.response?.data)
-      console.log(error.response?.status)
-    }
-    return NextResponse.error()
-  }
+  console.time('Request duration')
+  const response = await axios.post(
+    'https://api.openai.com/v1/completions',
+    payload,
+    { headers },
+  )
+  console.log(response.data)
+  console.timeEnd('Request duration')
+  const responseText = response.data.choices[0].text.trim()
+  const data = JSON.parse(responseText)
+  return NextResponse.json(data)
 }
