@@ -2,15 +2,15 @@
 import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import axios from 'axios'
 import { useState } from 'react'
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 import { Spinner } from '../components/Spinner'
 import Head from 'next/head'
 import { Recipe } from '@/components/Recipe'
-import { IRecipe, RecipesParams } from '@/@types/recipes'
+import { IRecipe, RecipesParams } from '@/types/recipes'
 import { Asterisk } from '@/components/Asterisk'
 import { FaUtensils } from 'react-icons/fa'
+import { getRecipesRequest } from '@/services/recipes'
 
 const recipesFormSchema = z.object({
   recipeDescription: z.string(),
@@ -34,7 +34,8 @@ export default function Home() {
   async function getRecipes(params: RecipesParams) {
     try {
       setLoading(true)
-      const response = await axios.post('/api/recipes', { params })
+      JSON.parse('/saasdasdSD')
+      const response = await getRecipesRequest(params)
       setRecipes((state) => [...state, ...response.data])
     } catch (error) {
       toast.error(
@@ -190,6 +191,7 @@ export default function Home() {
           . All rights reserved.
         </footer>
       </main>
+      <ToastContainer />
     </>
   )
 }

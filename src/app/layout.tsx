@@ -2,7 +2,6 @@ import { ReactNode } from 'react'
 import './globals.css'
 import { Roboto } from 'next/font/google'
 import 'react-toastify/dist/ReactToastify.css'
-import { ToastContainer } from 'react-toastify'
 import Script from 'next/script'
 
 const roboto = Roboto({
@@ -19,10 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-        {children}
-        <ToastContainer />
-      </body>
+      <body className={roboto.className}>{children}</body>
       <Script
         async
         strategy="afterInteractive"

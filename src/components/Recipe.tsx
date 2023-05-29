@@ -1,4 +1,4 @@
-import { IRecipe } from '@/@types/recipes'
+import { IRecipe } from '@/types/recipes'
 import { FaClock } from 'react-icons/fa'
 interface RecipeProps {
   recipe: IRecipe
