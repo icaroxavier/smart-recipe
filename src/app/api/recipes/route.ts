@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { RecipesParams } from '@/@types/recipes'
 import axios from 'axios'
 
+export const runtime = 'edge'
+
 export async function POST(request: Request) {
   const req = await request.json()
   const params: RecipesParams = req.params

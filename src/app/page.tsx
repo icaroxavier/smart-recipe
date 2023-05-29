@@ -70,7 +70,7 @@ export default function Home() {
         <title>Receita Inteligente</title>
         <meta name="description" content="A receita que você precisa!" />
       </Head>
-      <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center px-4 pt-2">
+      <main className="mx-auto flex min-h-screen w-full max-w-2xl flex-col justify-center px-4 pt-2">
         <h1 className="text-bold mb-4 mt-2 flex w-full items-center justify-center gap-4 rounded-lg bg-rose-500 py-4 text-2xl text-gray-50">
           <FaUtensils /> Receita Inteligente
         </h1>
