@@ -3,6 +3,7 @@ import './globals.css'
 import { Roboto } from 'next/font/google'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
+import Script from 'next/script'
 
 const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -22,6 +23,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
         <ToastContainer />
       </body>
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-KQREF7TBQQ"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-KQREF7TBQQ');
+        `}
+      </Script>
     </html>
   )
 }
