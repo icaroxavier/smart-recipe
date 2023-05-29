@@ -34,7 +34,6 @@ export default function Home() {
   async function getRecipes(params: RecipesParams) {
     try {
       setLoading(true)
-      JSON.parse('/saasdasdSD')
       const response = await getRecipesRequest(params)
       setRecipes((state) => [...state, ...response.data])
     } catch (error) {
