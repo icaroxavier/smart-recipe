@@ -9,11 +9,14 @@ import { Spinner } from '../components/Spinner'
 import Head from 'next/head'
 import { Recipe } from '@/components/Recipe'
 import { IRecipe, RecipesParams } from '@/@types/recipes'
+import { Asterisk } from '@/components/Asterisk'
+import { FaUtensils } from 'react-icons/fa'
 
 const recipesFormSchema = z.object({
   recipeDescription: z.string(),
   time: z.string(),
   tools: z.string(),
+  alimentaryRestrictions: z.string(),
 })
 
 type RecipesFormData = z.infer<typeof recipesFormSchema>
@@ -67,9 +70,9 @@ export default function Home() {
         <title>Receita Inteligente</title>
         <meta name="description" content="A receita que você precisa!" />
       </Head>
-      <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center p-4 py-2">
-        <h1 className="text-bold mb-4 mt-2 flex w-full items-center justify-center rounded-lg bg-rose-500 py-4 text-2xl text-gray-50">
-          Receita Inteligente
+      <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center px-4 pt-2">
+        <h1 className="text-bold mb-4 mt-2 flex w-full items-center justify-center gap-4 rounded-lg bg-rose-500 py-4 text-2xl text-gray-50">
+          <FaUtensils /> Receita Inteligente
         </h1>
         <form
           className="flex w-full flex-col gap-4"
@@ -82,13 +85,14 @@ export default function Home() {
             >
               Descreva quais ingredientes você tem em casa, o que você quer que
               conste na receita, uma receita que você já conhece ou até mesmo um
-              prato que você gostaria de comer.
+              prato que você gostaria de comer <Asterisk />
             </label>
             <textarea
               id="recipeDescription"
               className="rounded border border-gray-400 p-1 text-sm placeholder:text-gray-400"
               placeholder="Ex: alguma receita do nordeste, com carne de sol, queijo coalho, macaxeira, manteiga de garrafa, etc. ou  alguma receita com frango, queijo, tomate, etc."
               {...register('recipeDescription')}
+              required
               rows={4}
             />
           </div>
@@ -106,7 +110,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col">
             <label className="text-sm text-gray-600" htmlFor="tools">
-              Você quer usar algum{'(ns)'} equipamento{'(s)'} em específico?
+              Você quer usar algum equipamento em específico?
             </label>
             <input
               id="tools"
@@ -114,6 +118,21 @@ export default function Home() {
               className="rounded border border-gray-400 p-1 text-sm placeholder:text-gray-400"
               placeholder="Ex: fogão, forno, air fryer..."
               {...register('tools')}
+            />
+          </div>
+          <div className="mb-4 flex flex-col">
+            <label
+              className="text-sm text-gray-600"
+              htmlFor="alimentaryRestrictions"
+            >
+              Tem alguma restrição alimentar?
+            </label>
+            <input
+              id="alimentaryRestrictions"
+              type="text"
+              className="rounded border border-gray-400 p-1 text-sm placeholder:text-gray-400"
+              placeholder="Ex: vegano, intorelância a lactose..."
+              {...register('alimentaryRestrictions')}
             />
           </div>
           <button

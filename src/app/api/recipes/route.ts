@@ -15,6 +15,7 @@ export async function POST(request: Request) {
     "time" é o tempo médio que ele quer levar na receita (campo opcional), 
     "tools" é os esquipamentos que o usuário tem preferência para utilizar (campo opcional).
     "exclude" é uma lista de receitas que o usuário já viu e não deve mais aparecer (campo opcional).
+    "alimentaryRestrictions" é um campo onde o usuário pode preencher alguma ou várias restrições alimentares (campo opcional).
     Assumindo que o usuário já tem os ingredientes básicos em casa, como sal, açucar, água e óleo,
     gere pra mim 2 receitas.
     Os dados estão aqui : ${JSON.stringify(params, null, 2)} , 

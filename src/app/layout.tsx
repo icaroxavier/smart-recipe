@@ -10,6 +10,11 @@ const roboto = Roboto({
   display: 'swap',
 })
 
+export const metadata = {
+  title: 'Receita Inteligente',
+  description: 'Encontre receitas de acordo com os ingredientes que você tem',
+}
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">

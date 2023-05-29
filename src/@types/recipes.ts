@@ -2,6 +2,7 @@ export interface RecipesParams {
   recipeDescription: string
   time: string
   tools: string
+  alimentaryRestrictions: string
   exclude?: string[]
 }
 
