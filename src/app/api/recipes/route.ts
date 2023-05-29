@@ -2,28 +2,33 @@ import { NextResponse } from 'next/server'
 import { RecipesParams } from '@/types/recipes'
 import axios from 'axios'
 
-export const runtime = 'edge'
-
 export async function POST(request: Request) {
   const req = await request.json()
   const params: RecipesParams = req.params
   console.log('Params: ', params)
+  // const textv1 = `
+  //   O meu site que deverá gerar receitas inteligentes conforme
+  //   o que o usuário preencheu nos seguintes campos,
+  //   "recipeIngredientsOrInstructionsOrSpecific" são ingredientes que o usuário quer que apareça na receita,
+  //   pode ser um pedaço de uma receita que ele já conhece, pode ser uma receita especifica que ele quer,
+  //   o usário fica livre para escrever o que quiser,
+  //   "time" é o tempo médio que ele quer levar na receita (campo opcional),
+  //   "tools" é os esquipamentos que o usuário tem preferência para utilizar (campo opcional).
+  //   "exclude" é uma lista de receitas que o usuário já viu e não deve mais aparecer (campo opcional).
+  //   "alimentaryRestrictions" é um campo onde o usuário pode preencher alguma ou várias restrições alimentares (campo opcional).
+  //   Assumindo que o usuário já tem os ingredientes básicos em casa, como sal, açucar, água e óleo,
+  //   gere pra mim 2 receitas.
+  //   Os dados estão aqui : ${JSON.stringify(params, null, 2)} ,
+  //   O retorno da API deverá ser apenas um JSON válido sem linguagem natural
+  //   que functione dentro do JSON.parse() do JavaScript e deverá ter este formato:
+  //   Uma lista de receitas, cada receita deverá ter um "name", uma "description", um "timeToCook",
+  //   uma lista de "ingredients", uma lista de "tools", uma lista de "steps".
+  // `
+
   const text = `
-    O meu site que deverá gerar receitas inteligentes conforme 
-    o que o usuário preencheu nos seguintes campos, 
-    "recipeDescription" são ingredientes que o usuário quer que apareça na receita, 
-    pode ser um pedaço de uma receita que ele já conhece, pode ser uma receita especifica que ele quer, 
-    o usário fica livre para escrever o que quiser, 
-    "time" é o tempo médio que ele quer levar na receita (campo opcional), 
-    "tools" é os esquipamentos que o usuário tem preferência para utilizar (campo opcional).
-    "exclude" é uma lista de receitas que o usuário já viu e não deve mais aparecer (campo opcional).
-    "alimentaryRestrictions" é um campo onde o usuário pode preencher alguma ou várias restrições alimentares (campo opcional).
-    Assumindo que o usuário já tem os ingredientes básicos em casa, como sal, açucar, água e óleo,
-    gere pra mim 2 receitas.
-    Os dados estão aqui : ${JSON.stringify(params, null, 2)} , 
-    O retorno da API deverá ser apenas um JSON válido sem linguagem natural 
-    que functione dentro do JSON.parse() do JavaScript e deverá ter este formato: 
-    Uma lista de receitas, cada receita deverá ter um "name", uma "description", um "timeToCook", 
+    Com base no JSON: ${JSON.stringify(params, null, 2)},
+    gere pra mim 1 receita no formato JSON. Contendo:
+    Uma lista de receitas, cada receita deverá ter "name", "description", "timeToCook", 
     uma lista de "ingredients", uma lista de "tools", uma lista de "steps".
   `
   const payload = {

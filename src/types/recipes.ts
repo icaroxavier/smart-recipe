@@ -1,5 +1,5 @@
 export interface RecipesParams {
-  recipeDescription: string
+  recipeIngredientsOrInstructionsOrSpecific: string
   time: string
   tools: string
   alimentaryRestrictions: string

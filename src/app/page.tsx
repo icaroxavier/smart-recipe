@@ -10,10 +10,10 @@ import { Recipe } from '@/components/Recipe'
 import { IRecipe, RecipesParams } from '@/types/recipes'
 import { Asterisk } from '@/components/Asterisk'
 import { FaUtensils } from 'react-icons/fa'
-import { getRecipesRequest } from '@/services/recipes'
+import axios from 'axios'
 
 const recipesFormSchema = z.object({
-  recipeDescription: z.string(),
+  recipeIngredientsOrInstructionsOrSpecific: z.string(),
   time: z.string(),
   tools: z.string(),
   alimentaryRestrictions: z.string(),
@@ -34,7 +34,7 @@ export default function Home() {
   async function getRecipes(params: RecipesParams) {
     try {
       setLoading(true)
-      const response = await getRecipesRequest(params)
+      const response = await axios.post('/api/recipes', { params })
       setRecipes((state) => [...state, ...response.data])
     } catch (error) {
       toast.error(
@@ -81,18 +81,18 @@ export default function Home() {
           <div className="flex flex-col">
             <label
               className="text-sm text-gray-600"
-              htmlFor="recipeDescription"
+              htmlFor="recipeIngredientsOrInstructionsOrSpecific"
             >
               Descreva quais ingredientes você tem em casa, o que você quer que
               conste na receita, uma receita que você já conhece ou até mesmo um
               prato que você gostaria de comer <Asterisk />
             </label>
             <textarea
-              id="recipeDescription"
+              id="recipeIngredientsOrInstructionsOrSpecific"
               className="rounded border border-gray-400 px-2 py-1 text-sm placeholder:text-gray-400"
               placeholder="Ex: Alguma receita com frango, queijo e tomate. Ou você também pode ser mais específico 
               e dizer que quer uma receita de lasanha ou alguma receita do italiana."
-              {...register('recipeDescription')}
+              {...register('recipeIngredientsOrInstructionsOrSpecific')}
               required
               rows={4}
             />
