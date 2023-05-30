@@ -34,7 +34,7 @@ export default function Home() {
   async function getRecipes(params: RecipesParams) {
     try {
       setLoading(true)
-      const response = await axios.get('/api/recipes', { params })
+      const response = await axios.post('/api/recipes', { params })
       setRecipes((state) => [...state, response.data])
     } catch (error) {
       toast.error(
