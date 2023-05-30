@@ -4,6 +4,7 @@ export interface RecipesParams {
   tools: string
   alimentaryRestrictions: string
   exclude?: string[]
+  lang: string
 }
 
 export interface IRecipe {

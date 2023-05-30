@@ -1,0 +1,30 @@
+{
+    "app": {
+        "title": "Receita Inteligente",
+        "description": "A receita que você precisa!"
+    },
+    "recipeIngredientsOrInstructionsOrSpecific": {
+        "label": "Descreva quais ingredientes você tem em casa, o que você quer que conste na receita, uma receita que você já conhece ou até mesmo um prato que você gostaria de comer",
+        "placeholder": "Ex: Alguma receita com frango, queijo e tomate. Ou você também pode ser mais específico e dizer que quer uma receita de lasanha ou alguma receita do italiana."
+    },
+    "time": {
+        "label": "Em quanto tempo você quer comer?",
+        "placeholder": "Ex: 30 minutos, 1 hora"
+    },
+    "tools": {
+        "label": "Você quer usar algum equipamento em específico?",
+        "placeholder": "Ex: fogão, forno, air fryer..."
+    },
+    "alimentaryRestrictions": {
+        "label": "Tem alguma restrição alimentar?",
+        "placeholder": "Ex: vegano, intorelância a lactose..."
+    },
+    "generate": "Gere sua receita",
+    "generateMore": "Gerar outra receita parecida",
+    "loadingMessage": "A resposta pode demorar um pouco...",
+    "copyright": "Todos os direitos reservados.",
+    "error": {
+        "title": "Ops, algo deu errado!",
+        "message": "Desculpe pelo transtorno, por favor, tente novamente mais tarde."
+    }
+}

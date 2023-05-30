@@ -18,6 +18,7 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "next": "13.4.4",
+    "next-translate": "^2.0.5",
     "openai": "^3.2.1",
     "postcss": "8.4.24",
     "react": "18.2.0",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0",
+    "next-translate-plugin": "^2.0.5",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0"
   }

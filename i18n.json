@@ -1,0 +1,12 @@
+{
+  "locales": ["en", "pt"],
+  "defaultLocale": "en",
+  "react": {
+    "useSuspense": false,
+    "wait": true
+  },
+  "localeDetection": false,
+  "pages": {
+      "*": ["common"]
+    }
+  }

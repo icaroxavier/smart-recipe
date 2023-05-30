@@ -1,0 +1,30 @@
+{
+    "app": {
+        "title": "Smart Recipe",
+        "description": "The recipe you need!"
+    },
+    "recipeIngredientsOrInstructionsOrSpecific": {
+        "label": "Describe which ingredients you have at home, what you want to include in the recipe, a recipe you already know, or even a dish you would like to eat",
+        "placeholder": "E.g.: Any recipe with chicken, cheese, and tomatoes. You can also be more specific and say you want a lasagna recipe or any Italian recipe."
+    },
+    "time": {
+        "label": "How soon do you want to eat?",
+        "placeholder": "E.g.: 30 minutes, 1 hour"
+    },
+    "tools": {
+        "label": "Do you want to use any specific equipment?",
+        "placeholder": "E.g.: stove, oven, air fryer..."
+    },
+    "alimentaryRestrictions": {
+        "label": "Do you have any dietary restrictions?",
+        "placeholder": "E.g.: vegan, lactose intolerant..."
+    },
+    "generate": "Generate your recipe",
+    "generateMore": "Generate another similar recipe",
+    "loadingMessage": "The response may take a while...",
+    "copyright": "All rights reserved.",
+    "error": {
+        "title": "Oops, something went wrong!",
+        "message": "Sorry for the inconvenience. Please try again later."
+    }
+}

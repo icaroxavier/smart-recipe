@@ -1,24 +1,11 @@
-import { ReactNode } from 'react'
-import './globals.css'
-import { Roboto } from 'next/font/google'
+import '@/styles/globals.css'
 import 'react-toastify/dist/ReactToastify.css'
 import Script from 'next/script'
+import { AppProps } from 'next/app'
 
-const roboto = Roboto({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-})
-
-export const metadata = {
-  title: 'Receita Inteligente',
-  description: 'Encontre receitas de acordo com os ingredientes que você tem',
-}
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>{children}</body>
+    <>
       <Script
         async
         strategy="afterInteractive"
@@ -36,7 +23,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1089702703852943"
         crossOrigin="anonymous"
-      ></Script>
-    </html>
+      />
+      <Component {...pageProps} />
+    </>
   )
 }

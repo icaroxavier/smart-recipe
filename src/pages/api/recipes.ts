@@ -14,11 +14,21 @@ export default async function handler(
   console.log('req.body: ', req)
   const params: RecipesParams = req.body.params
   console.log('params: ', params)
-  const prompt = `
-    Com base no JSON: ${JSON.stringify(params, null, 2)},
-    gere pra mim 1 receita no formato JSON. 
-    Contendo: "name", "description", "timeToCook", uma lista de "ingredients", uma lista de "tools", uma lista de "steps".
-  `
+  let prompt = ''
+  if (params.lang === 'pt') {
+    prompt = `
+      Com base no JSON: ${JSON.stringify(params, null, 2)},
+      gere pra mim 1 receita no formato JSON. 
+      Contendo: "name", "description", "timeToCook", uma lista de "ingredients", uma lista de "tools", uma lista de "steps".
+    `
+  } else {
+    prompt = `
+      Based on the provided JSON: ${JSON.stringify(params, null, 2)},
+      generate one recipe for me in JSON format.
+      Containing: "name", "description", "timeToCook", a list of "ingredients", a list of "tools", and a list of "steps".
+    `
+  }
+
   const payload = {
     model: 'text-davinci-003',
     max_tokens: 2048,
