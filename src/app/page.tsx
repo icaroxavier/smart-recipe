@@ -35,7 +35,7 @@ export default function Home() {
     try {
       setLoading(true)
       const response = await axios.post('/api/recipes', { params })
-      setRecipes((state) => [...state, ...response.data])
+      setRecipes((state) => [...state, response.data])
     } catch (error) {
       toast.error(
         <div className="flex flex-col">
@@ -149,7 +149,7 @@ export default function Home() {
                 <Spinner /> A resposta pode demorar um pouco...
               </>
             ) : (
-              'Buscar receitas'
+              'Gere sua receita'
             )}
           </button>
         </form>
@@ -173,7 +173,7 @@ export default function Home() {
                 <Spinner /> A resposta pode demorar um pouco...
               </>
             ) : (
-              'Gerar mais receitas'
+              'Gerar outra receita parecida'
             )}
           </button>
         )}
