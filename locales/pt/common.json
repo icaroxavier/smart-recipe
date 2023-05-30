@@ -26,5 +26,10 @@
     "error": {
         "title": "Ops, algo deu errado!",
         "message": "Desculpe pelo transtorno, por favor, tente novamente mais tarde."
+    },
+    "recipe": {
+        "tools": "Você vai precisar de:",
+        "ingredients": "Ingredientes necessários:",
+        "step": "Passo a passo:"
     }
 }
