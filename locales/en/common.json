@@ -26,5 +26,10 @@
     "error": {
         "title": "Oops, something went wrong!",
         "message": "Sorry for the inconvenience. Please try again later."
+    },
+    "recipe": {
+        "tools": "You will need:",
+        "ingredients": "Ingredients:",
+        "step": "Step by step:"
     }
 }
