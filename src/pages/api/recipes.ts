@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server'
 import { RecipesParams } from '@/types/recipes'
 import { Configuration, OpenAIApi } from 'openai'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -8,9 +8,11 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration)
 
-export async function POST(request: Request) {
-  const req = await request.json()
-  const params: RecipesParams = req.params
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
+  const params: RecipesParams = req.body.params
 
   console.log('params: ', params)
 
@@ -31,5 +33,6 @@ export async function POST(request: Request) {
   console.log('responseText: ', responseText)
 
   const data = JSON.parse(responseText)
-  return NextResponse.json(data)
+
+  return res.status(200).json(data)
 }
