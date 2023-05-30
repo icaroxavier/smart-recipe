@@ -35,7 +35,7 @@ export default function Home() {
     try {
       setLoading(true)
       const response = await axios.post('/api/recipes', { params })
-      setRecipes((state) => [...state, response.data])
+      setRecipes((state) => [...state, ...response.data])
     } catch (error) {
       toast.error(
         <div className="flex flex-col">

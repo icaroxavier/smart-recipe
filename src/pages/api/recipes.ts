@@ -16,7 +16,7 @@ export default async function handler(
   console.log('params: ', params)
   const prompt = `
     Com base no JSON: ${JSON.stringify(params, null, 2)},
-    gere pra mim 1 receita no formato JSON. 
+    gere pra mim 2 receitas no formato JSON. 
     Contendo: "name", "description", "timeToCook", uma lista de "ingredients", uma lista de "tools", uma lista de "steps".
   `
   const payload = {
