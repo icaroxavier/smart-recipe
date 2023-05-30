@@ -36,11 +36,9 @@ export default async function handler(
     { headers },
   )
 
-  const responseText = data.choices[0].text.trim()
+  const response = data.choices[0].text
 
-  console.log('responseText: ', responseText)
+  console.log(response)
 
-  const json = JSON.parse(responseText)
-
-  return res.status(200).json(json)
+  return res.status(200).json(JSON.parse(response))
 }
