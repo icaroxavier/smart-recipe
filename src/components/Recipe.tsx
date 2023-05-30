@@ -6,7 +6,7 @@ interface RecipeProps {
 }
 
 export function Recipe({ recipe }: RecipeProps) {
-  const { t } = useTranslation('home')
+  const { t } = useTranslation('common')
 
   return (
     <div className="flex w-full flex-col rounded-lg bg-white p-5 shadow-xl">

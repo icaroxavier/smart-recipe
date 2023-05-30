@@ -4,7 +4,7 @@ import useTranslation from 'next-translate/useTranslation'
 import { useEffect, useState } from 'react'
 
 export function TranslateMenu() {
-  const { lang } = useTranslation('home')
+  const { lang } = useTranslation('common')
   const [isTranslateMenuOpen, setIsTranslateMenuOpen] = useState<boolean>(false)
 
   const handleCloseTranslateMenu = () => setIsTranslateMenuOpen(false)
