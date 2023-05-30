@@ -19,11 +19,11 @@ export async function POST(request: Request) {
     Contendo: "name", "description", "timeToCook", uma lista de "ingredients", uma lista de "tools", uma lista de "steps".
   `
 
-  const completion = await openai.createCompletion({
+  const completion = (await openai.createCompletion({
     model: 'text-davinci-003',
     max_tokens: 2048,
     prompt,
-  })
+  })) as any
 
   const responseText = completion.data.choices[0].text.trim()
   const data = JSON.parse(responseText)
