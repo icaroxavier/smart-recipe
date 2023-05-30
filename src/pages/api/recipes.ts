@@ -15,7 +15,7 @@ export default async function handler(
   const params: RecipesParams = req.body.params
   console.log('params: ', params)
   let prompt = ''
-  if (params.lang === 'pt') {
+  if (params?.lang === 'pt') {
     prompt = `
       Com base no JSON: ${JSON.stringify(params, null, 2)},
       gere pra mim 1 receita no formato JSON. 

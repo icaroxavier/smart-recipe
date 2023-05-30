@@ -12,13 +12,13 @@ export function TranslateMenu() {
 
   const handleChangeLanguage = (langParam: string) => {
     setLanguage(langParam)
-    localStorage.setItem('@icaroxavier/receita-inteligente:lang', langParam)
+    localStorage.setItem('@icaroxavier/smart-recipe:lang', langParam)
     handleCloseTranslateMenu()
   }
 
   useEffect(() => {
     const localStorageLang = localStorage.getItem(
-      '@icaroxavier/receita-inteligente:lang',
+      '@icaroxavier/smart-recipe:lang',
     )
     if (localStorageLang === 'en') {
       setLanguage('en')
