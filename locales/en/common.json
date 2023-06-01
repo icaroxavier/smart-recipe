@@ -1,6 +1,7 @@
 {
     "home": "Home",
     "history": "History",
+    "noHistory": "No recipes in history yet, generate one and it will appear here!",
     "app": {
         "title": "Smart Recipe",
         "description": "The recipe you need!"

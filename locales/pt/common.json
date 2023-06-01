@@ -1,6 +1,7 @@
 {
     "home": "Início",	
     "history": "Histórico",
+    "noHistory": "Nenhuma receita no histórico ainda, gere uma e ela ficará guarda aqui!",
     "app": {
         "title": "Receita Inteligente",
         "description": "A receita que você precisa!"
