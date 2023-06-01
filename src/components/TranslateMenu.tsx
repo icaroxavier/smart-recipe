@@ -29,14 +29,14 @@ export function TranslateMenu() {
   }, [])
 
   return (
-    <>
+    <div className="relative ml-auto sm:ml-0">
       <MdOutlineTranslate
         size={42}
         onClick={toggleTranslateMenu}
-        className="fixed right-2 top-2 z-30 cursor-pointer rounded-full bg-blue-500 p-2 text-zinc-50 transition-all hover:scale-110 md:right-8 md:top-4"
+        className="cursor-pointer rounded-full bg-blue-500 p-2 text-zinc-50 transition-all hover:scale-110"
       />
       <div
-        className={`shadow-lgg fixed right-4 top-16 z-30 bg-white md:right-8 md:top-20 ${
+        className={`fixed right-4 top-16 z-30 bg-white shadow-lg md:right-8 md:top-20 ${
           isTranslateMenuOpen ? 'scale-100' : 'scale-0'
         } flex flex-col gap-2 rounded-md p-2 transition-all`}
       >
@@ -63,6 +63,6 @@ export function TranslateMenu() {
           onClick={handleCloseTranslateMenu}
         />
       )}
-    </>
+    </div>
   )
 }

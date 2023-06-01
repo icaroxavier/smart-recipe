@@ -1,4 +1,6 @@
 {
+    "home": "Home",
+    "history": "History",
     "app": {
         "title": "Smart Recipe",
         "description": "The recipe you need!"

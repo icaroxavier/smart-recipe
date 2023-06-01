@@ -9,7 +9,10 @@ export function Recipe({ recipe }: RecipeProps) {
   const { t } = useTranslation('common')
 
   return (
-    <div className="flex w-full flex-col rounded-lg bg-white p-5 shadow-xl">
+    <div
+      className="flex w-full flex-col rounded-lg 
+    border border-zinc-300 bg-zinc-100 p-5"
+    >
       <div className="flex justify-between">
         <h3 className="text-xl text-zinc-700">{recipe.name}</h3>
         <span className="flex items-center gap-2 text-zinc-500">
