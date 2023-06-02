@@ -27,7 +27,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
         <title>{t('app.title')}</title>
         <meta name="description" content={t('app.description')} />
       </Head>
-      <header className="text-bold fixed left-0 top-0 flex h-16 w-full items-center gap-4 bg-rose-400 px-4 text-2xl text-zinc-50">
+      <header className="text-bold fixed left-0 top-0 flex h-16 w-full items-center gap-4 px-4 text-2xl text-zinc-50">
         <Link
           className="flex cursor-pointer items-center gap-4 rounded px-1 py-2"
           href={'/'}
@@ -51,10 +51,12 @@ export default function PageWrapper({ children }: PageWrapperProps) {
         </nav>
         <TranslateMenu />
       </header>
-      <main className="mx-auto mt-20 flex w-full max-w-2xl flex-1 flex-col px-4 pt-2">
-        {children}
+      <main className="mt-16 flex w-full  flex-1 flex-col bg-zinc-100 px-4 pt-4">
+        <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col">
+          {children}
+        </div>
       </main>
-      <footer className="mb-2 mt-auto flex flex-col items-center justify-center gap-2 text-sm text-zinc-500">
+      <footer className="mt-auto flex flex-col items-center justify-center gap-2 bg-zinc-100 pb-2 text-sm text-zinc-500">
         <div className="flex items-center gap-2">
           <a
             href="https://www.linkedin.com/in/icaroxavier/"
