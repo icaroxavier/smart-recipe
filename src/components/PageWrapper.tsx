@@ -28,7 +28,7 @@ export default function PageWrapper({ children }: PageWrapperProps) {
         <title>{t('app.title')}</title>
         <meta name="description" content={t('app.description')} />
       </Head>
-      <header className="text-bold fixed left-0 top-0 flex h-16 w-full items-center gap-4 bg-rose-400 px-4 text-2xl text-zinc-50">
+      <header className="text-bold fixed left-0 top-0 flex h-16 w-full items-center gap-4 bg-rose-400 px-4 text-2xl text-zinc-50 shadow">
         <Link
           className="flex cursor-pointer items-center gap-4 rounded px-1 py-2"
           href={'/'}
