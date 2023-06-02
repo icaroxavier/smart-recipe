@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaTwitterSquare,
   FaUtensils,
+  FaWhatsappSquare,
 } from 'react-icons/fa'
 import { TranslateMenu } from '@/components/TranslateMenu'
 import Head from 'next/head'
@@ -86,11 +87,20 @@ export default function PageWrapper({ children }: PageWrapperProps) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {' '}
             <FaTwitterSquare
               className="cursor-pointer text-zinc-500 transition-all hover:scale-110"
               size={32}
               onClick={() => push('', {})}
+            />
+          </a>
+          <a
+            href="https://wa.me/5585998164001?text=Oi,%20tudo%20bem?"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaWhatsappSquare
+              size={32}
+              className="cursor-pointer text-zinc-500 transition-all hover:scale-110"
             />
           </a>
         </div>
